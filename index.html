@@ -1,66 +1,528 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Starter</title>
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jayeshchandra Patel — Web Developer</title>
+  <meta name="description" content="Jayeshchandra Patel — HTML, WordPress & Shopify Developer with 8+ years experience. HTML, CSS, JS, Bootstrap, Tailwind, WordPress, Shopify, WooCommerce." />
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="" crossorigin="anonymous">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root{
+      --brand-primary: #1774FF;
+      --accent: #6CFF4F;
+    }
+    html,body{height:100%;}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height:1.5;
+      color:#111827;
+      background: #fff;
+    }
+    /* Hero */
+    .hero{
+      background: linear-gradient(180deg, rgba(23,116,255,0.06), rgba(108,255,79,0.02));
+      padding: 6rem 0;
+    }
+    .badge-accent {
+      background: linear-gradient(90deg,var(--accent), #50e84a);
+      color: #012;
+      font-weight:700;
+      padding: .25rem .6rem;
+      border-radius: .375rem;
+      display:inline-block;
+    }
+    .service-card { transition: transform .18s ease, box-shadow .18s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(22, 23, 24, .06); }
+    .portfolio-item img{ width:100%; height:220px; object-fit:cover; border-radius: .5rem; }
+    .skill-badge { background:#f1f5f9; padding:.45rem .65rem; border-radius:.375rem; display:inline-block; margin:.25rem; font-weight:600; }
+    .cta-strip{ background: linear-gradient(90deg,var(--brand-primary), #005ce6); color:#fff; padding:2rem; border-radius:.6rem; text-align:center;}
+    footer{background:#0b1220; color:#e6eef8; padding:3rem 0;}
+    .nav-link.active { font-weight:700; color:var(--brand-primary) !important; }
+    /* Responsive tweaks */
+    @media(min-width:992px){
+      .hero { padding:8rem 0; }
+      .portfolio-item img{ height:260px; }
+    }
+  </style>
 </head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100" tabindex="0">
 
-<body>
+<!-- NAVBAR -->
+<header>
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <rect width="24" height="24" rx="6" fill="#1774FF"/>
+          <path d="M6 12h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="d-flex flex-column">
+          <strong style="line-height:1;">Jayeshchandra Patel</strong>
+          <small class="text-muted">HTML • WordPress • Shopify</small>
+        </div>
+      </a>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="d-flex ms-lg-3">
+          <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <span class="badge-accent mb-3">8+ Years • Front-end & CMS</span>
+          <h1 class="display-5 fw-bold">Hi, I’m <span class="text-primary">Jayeshchandra Patel</span><br /><small class="text-muted">HTML, WordPress & Shopify Developer</small></h1>
+          <p class="lead text-muted">I build fast, modern, responsive websites with clean code and a focus on conversions. Specialised in custom WordPress themes, Shopify Liquid, front-end HTML/CSS/JS and WooCommerce integrations.</p>
+
+          <div class="d-flex gap-2">
+            <a href="#portfolio" class="btn btn-lg btn-outline-primary">View My Work</a>
+            <a href="#contact" class="btn btn-lg btn-primary">Hire Me</a>
+          </div>
+
+          <ul class="list-inline mt-4 text-muted small">
+            <li class="list-inline-item me-3"><i class="bi bi-phone"></i> +91 87358 89717</li>
+            <li class="list-inline-item"><i class="bi bi-envelope"></i> <a href="mailto:pateljayesh717@gmail.com">pateljayesh717@gmail.com</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6 text-center">
+          <!-- Placeholder illustration -->
+          <div class="shadow-sm p-4 rounded-3" style="background:#fff;">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=60" alt="Developer working" class="img-fluid rounded" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust / icons -->
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="d-flex flex-wrap gap-3 align-items-center">
+            <small class="text-muted me-3">Trusted by:</small>
+            <!-- Replace with small logos or client names -->
+            <span class="badge bg-light text-dark">PinderEvents</span>
+            <span class="badge bg-light text-dark">Cabot Financial</span>
+            <span class="badge bg-light text-dark">Conygar</span>
+            <span class="badge bg-light text-dark">Reve-en-vert</span>
+            <span class="badge bg-light text-dark">Trade-Made</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES PREVIEW -->
+  <section id="services" class="py-5">
+    <div class="container">
+      <div class="row align-items-end mb-4">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">What I Do</h2>
+          <p class="text-muted">Full-stack front-end & CMS development — clean, responsive, and performance-focused.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end d-none d-lg-block">
+          <a href="#contact" class="btn btn-outline-primary">Request Quote</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Custom WordPress Development</h5>
+              <p class="card-text text-muted">Themes, plugins, Elementor / Divi / WPBakery custom builds and WooCommerce stores.</p>
+              <div><small class="text-muted">PHP • WP REST API • WooCommerce</small></div>
             </div>
+          </article>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="bg-light py-5">
-        <div class="container text-center">
-            <h1 class="display-4">Welcome to Bootstrap Starter</h1>
-            <p class="lead">This is your basic Bootstrap 5 template.</p>
-            <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Shopify & E-commerce</h5>
+              <p class="card-text text-muted">Custom Shopify themes, Liquid templates, dropshipping setups and performance optimization.</p>
+              <div><small class="text-muted">Liquid • Apps • Store speed</small></div>
+            </div>
+          </article>
         </div>
-    </header>
 
-    <!-- Content -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="mb-4">Section Title</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel velit lorem.</p>
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Front-end & Landing Pages</h5>
+              <p class="card-text text-muted">HTML / CSS / JS / Bootstrap / Tailwind — pixel-perfect builds from Figma/PSD.</p>
+              <div><small class="text-muted">Bootstrap • Tailwind • JS</small></div>
+            </div>
+          </article>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-3">
-        <div class="container text-center">
-            © 2025 Your Company. All Rights Reserved.
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Wix & Lightweight Sites</h5>
+              <p class="card-text text-muted">Fast Wix redesigns and brand-focused builds for small business owners.</p>
+              <div><small class="text-muted">Wix Editor • SEO basics</small></div>
+            </div>
+          </article>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Maintenance & Troubleshooting</h5>
+              <p class="card-text text-muted">Bug fixing, migrations, server/DNS setups, speed and security improvements.</p>
+              <div><small class="text-muted">Servers • DNS • Backups</small></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <article class="card service-card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Figma/PSD → Code</h5>
+              <p class="card-text text-muted">Convert UI designs into production-ready responsive HTML/CSS with attention to detail.</p>
+              <div><small class="text-muted">Accessibility • SEO fundamentals</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PORTFOLIO -->
+  <section id="portfolio" class="py-5 bg-light">
+    <div class="container">
+      <div class="row mb-4 align-items-center">
+        <div class="col-md-8">
+          <h2 class="fw-bold">Portfolio</h2>
+          <p class="text-muted">A selection of websites and stores I've developed and launched.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <a class="btn btn-outline-dark" href="#contact">Get a Similar Site</a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Portfolio items: replace thumbnail urls with real screenshots -->
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="https://pinderevents.co.uk/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/pinder/800/600" alt="Pinder Events site screenshot" class="rounded shadow-sm" />
+            <h6 class="mt-2">Pinder Events</h6>
+            <small class="text-muted">Event website</small>
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="https://www.cabotfinancial.ie/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/cabot/800/600" alt="Cabot Financial screenshot" class="rounded shadow-sm" />
+            <h6 class="mt-2">Cabot Financial</h6>
+            <small class="text-muted">Corporate site</small>
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="http://conygar.com/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/conygar/800/600" alt="Conygar screenshot" class="rounded shadow-sm" />
+            <h6 class="mt-2">Conygar</h6>
+            <small class="text-muted">Property / corporate</small>
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="https://czechmusicdirect.co.uk/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/czech/800/600" alt="Czech Music Direct" class="rounded shadow-sm" />
+            <h6 class="mt-2">Czech Music Direct</h6>
+            <small class="text-muted">E-commerce</small>
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="https://trade-made.co.uk/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/trademade/800/600" alt="Trade Made" class="rounded shadow-sm" />
+            <h6 class="mt-2">Trade-Made</h6>
+            <small class="text-muted">Shop / B2B</small>
+          </a>
+        </div>
+
+        <div class="col-sm-6 col-md-4 portfolio-item">
+          <a href="https://reve-en-vert.com/" target="_blank" rel="noopener" class="d-block text-decoration-none text-dark">
+            <img src="https://picsum.photos/seed/reve/800/600" alt="Reve en Vert" class="rounded shadow-sm" />
+            <h6 class="mt-2">Reve-en-Vert</h6>
+            <small class="text-muted">E-commerce</small>
+          </a>
+        </div>
+
+        <!-- Add more items as needed -->
+      </div>
+
+      <div class="row mt-4">
+        <div class="col text-center">
+          <a href="#portfolio" class="btn btn-outline-primary">View Full Portfolio</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-4 text-center">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=60" class="img-fluid rounded-3 shadow" alt="Jayeshchandra Patel" />
+        </div>
+        <div class="col-md-8">
+          <h2 class="fw-bold">About Me</h2>
+          <p class="text-muted">I'm a passionate and detail-oriented web developer with 8 years of experience building modern, responsive, and high-performing websites. I work across WordPress, Shopify, and static front-end builds — focusing on clean code, usability, and long-term maintainability.</p>
+
+          <div class="row mt-3">
+            <div class="col-sm-6">
+              <h6 class="mb-1">Core Skills</h6>
+              <p class="small text-muted">HTML • CSS • JavaScript • jQuery • Bootstrap • Tailwind</p>
+            </div>
+            <div class="col-sm-6">
+              <h6 class="mb-1">Platforms</h6>
+              <p class="small text-muted">WordPress (themes & plugins) • Shopify (Liquid) • WooCommerce • Wix</p>
+            </div>
+          </div>
+
+          <a class="btn btn-outline-dark mt-3" href="#contact">Let's work together</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5">
+          <h3 class="fw-bold">Technical Skills</h3>
+          <p class="text-muted">From front-end craftsmanship to CMS architecture and e-commerce — I cover the full stack for most small-to-medium website projects.</p>
+          <div class="mt-3">
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">jQuery</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">Tailwind</span>
+            <span class="skill-badge">WordPress</span>
+            <span class="skill-badge">Shopify (Liquid)</span>
+            <span class="skill-badge">PHP</span>
+            <span class="skill-badge">WooCommerce</span>
+            <span class="skill-badge">Wix</span>
+            <span class="skill-badge">Server & DNS</span>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <h6 class="mb-3">Skill levels</h6>
+          <!-- Simple progress indicators -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><small>HTML / CSS</small><small>95%</small></div>
+            <div class="progress" style="height:10px"><div class="progress-bar" role="progressbar" style="width:95%"></div></div>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><small>JavaScript / jQuery</small><small>85%</small></div>
+            <div class="progress" style="height:10px"><div class="progress-bar" role="progressbar" style="width:85%"></div></div>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><small>WordPress (themes & plugins)</small><small>90%</small></div>
+            <div class="progress" style="height:10px"><div class="progress-bar" role="progressbar" style="width:90%"></div></div>
+          </div>
+
+          <div class="mb-3">
+            <div class="d-flex justify-content-between"><small>Shopify (Liquid)</small><small>80%</small></div>
+            <div class="progress" style="height:10px"><div class="progress-bar" role="progressbar" style="width:80%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col-lg-8">
+          <h2 class="fw-bold">Testimonials</h2>
+          <p class="text-muted">What clients say about working with me.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>“Jayesh delivered our Shopify store flawlessly. Clean code, great communication, and fast delivery.”</p>
+                <footer class="blockquote-footer mt-3">Client from UK</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p>“One of the best WordPress developers I’ve worked with. Professional and highly skilled.”</p>
+                <footer class="blockquote-footer mt-3">Agency client</footer>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="py-4">
+    <div class="container">
+      <div class="cta-strip">
+        <h4 class="mb-2">Ready to start your project?</h4>
+        <p class="mb-3">I build robust, maintainable websites that convert. Let’s discuss your requirements and timelines.</p>
+        <a href="#contact" class="btn btn-dark btn-lg">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <h3 class="fw-bold">Get in touch</h3>
+          <p class="text-muted">Ready to hire or want a quote? Send project details and I’ll respond quickly.</p>
+
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-telephone"></i> <strong>Phone:</strong> <a href="tel:+918735889717">+91 87358 89717</a></li>
+            <li class="mb-2"><i class="bi bi-envelope"></i> <strong>Email:</strong> <a href="mailto:pateljayesh717@gmail.com">pateljayesh717@gmail.com</a></li>
+            <li class="mb-2"><i class="bi bi-globe"></i> <strong>Portfolio:</strong> <a href="#portfolio">View live projects</a></li>
+          </ul>
+
+          <div class="mt-4">
+            <a href="https://www.linkedin.com" class="btn btn-outline-dark btn-sm me-2"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com" class="btn btn-outline-dark btn-sm"><i class="bi bi-github"></i> GitHub</a>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <!-- Simple contact form (no backend). Change action to your server endpoint if needed -->
+          <form action="mailto:pateljayesh717@gmail.com" method="post" enctype="text/plain" class="card p-3 shadow-sm">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Name</label>
+                <input class="form-control" type="text" name="Name" required />
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input class="form-control" type="email" name="Email" required />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Phone</label>
+                <input class="form-control" type="tel" name="Phone" />
+              </div>
+
+              <div class="col-12">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" name="Message" rows="5" required></textarea>
+              </div>
+
+              <div class="col-12 text-end">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-4">
+        <strong>Jayeshchandra Patel</strong><br />
+        <small class="text-muted">HTML • WordPress • Shopify Developer</small>
+      </div>
+
+      <div class="col-md-4 text-center">
+        <nav>
+          <a href="#home" class="text-decoration-none text-reset me-3">Home</a>
+          <a href="#portfolio" class="text-decoration-none text-reset me-3">Portfolio</a>
+          <a href="#contact" class="text-decoration-none text-reset">Contact</a>
+        </nav>
+      </div>
+
+      <div class="col-md-4 text-md-end">
+        <small class="d-block">Phone: <a href="tel:+918735889717" class="text-reset">+91 87358 89717</a></small>
+        <small class="d-block">Email: <a href="mailto:pateljayesh717@gmail.com" class="text-reset">pateljayesh717@gmail.com</a></small>
+        <small class="d-block mt-2">© <span id="year"></span> Jayeshchandra Patel. All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+
+<script>
+  // Fill current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Collapse mobile nav if open
+        const nav = document.querySelector('.navbar-collapse');
+        if (nav && nav.classList.contains('show')) {
+          new bootstrap.Collapse(nav).toggle();
+        }
+      }
+    });
+  });
+
+  // Activate scrollspy
+  const body = document.body;
+  const navEl = document.getElementById('mainNav');
+  if (navEl) {
+    new bootstrap.ScrollSpy(document.body, { target: '#mainNav', offset: 120 });
+  }
+</script>
 </body>
 </html>
